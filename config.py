@@ -1,5 +1,5 @@
 # config.py
 
-API_ID = "your_api_id"
-API_HASH = "your_api_hash"
-BOT_TOKEN = "your_bot_token"
+API_ID = "17875613"
+API_HASH = "6798f54a7f74e94f2ef0923fba8a8377"
+BOT_TOKEN = "7513524486:AAFlIPgdbEsui9DNmTqAXTzQr1t37O_E6vc"
