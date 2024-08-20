@@ -2,7 +2,7 @@
 
 from pyrogram import Client, filters
 
-@app.on_message(filters.command("help"))
+@Client.on_message(filters.command("help"))
 async def help(client, message):
     help_text = (
         "Here is how you can use this bot:\n"
