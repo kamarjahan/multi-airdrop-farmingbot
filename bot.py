@@ -1,22 +1,15 @@
-import pyrogram
-from pyrogram import filters
+# bot.py
 
-# Replace 'YOUR_BOT_TOKEN' with your actual bot token
-bot = pyrogram.Client("my_bot", api_id=YOUR_API_ID, api_hash=YOUR_API_HASH, bot_token="YOUR_BOT_TOKEN")
+from pyrogram import Client
+import config
 
-@bot.on_message(filters.command("start"))
-async def start(client, message):
-    # Code to send a message with inline buttons
-    await client.send_message(message.chat.id, "Choose an option:", reply_markup=inline_keyboard)
+app = Client(
+    "crypto_airdrop_bot",
+    api_id=config.API_ID,
+    api_hash=config.API_HASH,
+    bot_token=config.BOT_TOKEN,
+    plugins=dict(root="plugins")
+)
 
-# Define the inline keyboard
-inline_keyboard = [
-    [
-        pyrogram.InlineKeyboardButton("Open Mini App", web_app=pyrogram.WebAppInfo(url="https://your_mini_app_url"))
-    ],
-    [
-        pyrogram.InlineKeyboardButton("Visit Website", url="https://your_website_url")
-    ]
-]
-
-bot.run()
+if __name__ == "__main__":
+    app.run()
